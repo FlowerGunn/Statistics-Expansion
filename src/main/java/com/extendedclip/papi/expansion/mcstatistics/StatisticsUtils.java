@@ -140,16 +140,16 @@ public class StatisticsUtils {
         hours %= 24;
         days %= 7;
 
-        if (seconds > 0) {
-            builder.insert(0, seconds + "s");
-        }
+//        if (seconds > 0) {
+//            builder.insert(0, seconds + "с");
+//        }
 
         if (minutes > 0) {
             if (builder.length() > 0) {
                 builder.insert(0, ' ');
             }
 
-            builder.insert(0, minutes + "m");
+            builder.insert(0, minutes + "мин.");
         }
 
         if (hours > 0) {
@@ -157,7 +157,7 @@ public class StatisticsUtils {
                 builder.insert(0, ' ');
             }
 
-            builder.insert(0, hours + "h");
+            builder.insert(0, hours + "ч.");
         }
 
         if (days > 0) {
@@ -165,16 +165,16 @@ public class StatisticsUtils {
                 builder.insert(0, ' ');
             }
 
-            builder.insert(0, days + "d");
+            builder.insert(0, days + "д.");
         }
 
-        if (weeks > 0) {
-            if (builder.length() > 0) {
-                builder.insert(0, ' ');
-            }
-
-            builder.insert(0, weeks + "w");
-        }
+//        if (weeks > 0) {
+//            if (builder.length() > 0) {
+//                builder.insert(0, ' ');
+//            }
+//
+//            builder.insert(0, weeks + "н");
+//        }
 
         return builder.toString();
     }

@@ -137,7 +137,11 @@ public class StatisticsExpansion extends PlaceholderExpansion implements Cacheab
              * Time since last death
              */
             case "time_since_death": {
-                return StatisticsUtils.formatTime(Duration.of(secondsSinceLastDeath, ChronoUnit.SECONDS));
+                Duration duration = Duration.of(secondsSinceLastDeath, ChronoUnit.SECONDS);
+                long minutes = duration.toMinutes();
+                int hours = (int) Math.floor(minutes / 60);
+                int minutesRest = (int) Math.floor(minutes) - 60 * hours;
+                return " " + hours + "ч. " + minutesRest + "мин.";
             }
 
             case "seconds_since_death": {
